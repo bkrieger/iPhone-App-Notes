@@ -20,6 +20,7 @@
 		C5AF79A0161B4C5F008094EB /* BTKSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AF799F161B4C5F008094EB /* BTKSecondViewController.m */; };
 		C5AF79A2161B4C5F008094EB /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = C5AF79A1161B4C5F008094EB /* second.png */; };
 		C5AF79A4161B4C5F008094EB /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5AF79A3161B4C5F008094EB /* second@2x.png */; };
+		C5AF79AB161B4D16008094EB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C5AF79AA161B4D16008094EB /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		C5AF799F161B4C5F008094EB /* BTKSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTKSecondViewController.m; sourceTree = "<group>"; };
 		C5AF79A1161B4C5F008094EB /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		C5AF79A3161B4C5F008094EB /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		C5AF79AA161B4D16008094EB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		C5AF7973161B4C5E008094EB = {
 			isa = PBXGroup;
 			children = (
+				C5AF79AA161B4D16008094EB /* README.md */,
 				C5AF7988161B4C5E008094EB /* Notes */,
 				C5AF7981161B4C5E008094EB /* Frameworks */,
 				C5AF797F161B4C5E008094EB /* Products */,
@@ -173,6 +176,7 @@
 				C5AF799D161B4C5F008094EB /* first@2x.png in Resources */,
 				C5AF79A2161B4C5F008094EB /* second.png in Resources */,
 				C5AF79A4161B4C5F008094EB /* second@2x.png in Resources */,
+				C5AF79AB161B4D16008094EB /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
