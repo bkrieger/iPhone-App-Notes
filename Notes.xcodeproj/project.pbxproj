@@ -26,7 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C55293F6161CB67E00C451AC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		C55293F6161CB67E00C451AC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C55293F8161CB6E200C451AC /* BTKNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTKNote.h; sourceTree = "<group>"; };
 		C55293F9161CB6E200C451AC /* BTKNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTKNote.m; sourceTree = "<group>"; };
 		C55293FB161CB70D00C451AC /* BTKNoteDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTKNoteDataController.h; sourceTree = "<group>"; };
@@ -71,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				C5AF79AA161B4D16008094EB /* README.md */,
+				C55293F6161CB67E00C451AC /* Default-568h@2x.png */,
 				C5AF7988161B4C5E008094EB /* Notes */,
 				C5AF7981161B4C5E008094EB /* Frameworks */,
 				C5AF797F161B4C5E008094EB /* Products */,
@@ -98,7 +99,6 @@
 		C5AF7988161B4C5E008094EB /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				C55293F6161CB67E00C451AC /* Default-568h@2x.png */,
 				C55293FB161CB70D00C451AC /* BTKNoteDataController.h */,
 				C55293FC161CB70D00C451AC /* BTKNoteDataController.m */,
 				C55293F8161CB6E200C451AC /* BTKNote.h */,

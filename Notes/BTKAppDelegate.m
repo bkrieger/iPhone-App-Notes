@@ -14,10 +14,14 @@
 
 @implementation BTKAppDelegate
 
+@synthesize window = _window;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    BTKMasterViewController *firstViewController = (BTKMasterViewController *)[[navigationController viewControllers] objectAtIndex:0];
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    
+    UINavigationController *navigationController = (UINavigationController *)[[tabBarController viewControllers] objectAtIndex:0];
+    BTKMasterViewController *firstViewController = [[navigationController viewControllers] objectAtIndex:0];
     
     BTKNoteDataController *aDataController = [[BTKNoteDataController alloc] init];
     firstViewController.dataController = aDataController;

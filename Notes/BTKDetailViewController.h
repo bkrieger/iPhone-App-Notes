@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@class BTKNote;
 
-@interface BTKDetailViewController : UIViewController
+@interface BTKDetailViewController : UITableViewController
 
-@property (strong, nonatomic) id detailItem;
+@property (strong,nonatomic) BTKNote *note;
+@property (weak,nonatomic) IBOutlet UILabel *noteTitleLabel;
+@property (weak,nonatomic) IBOutlet UILabel *locationLabel;
+@property (weak,nonatomic) IBOutlet UILabel *dateLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @end
