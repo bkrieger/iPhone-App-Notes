@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C55293F7161CB67E00C451AC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C55293F6161CB67E00C451AC /* Default-568h@2x.png */; };
+		C55293FA161CB6E300C451AC /* BTKNote.m in Sources */ = {isa = PBXBuildFile; fileRef = C55293F9161CB6E200C451AC /* BTKNote.m */; };
+		C55293FD161CB70D00C451AC /* BTKNoteDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C55293FC161CB70D00C451AC /* BTKNoteDataController.m */; };
 		C588FFD6161BE00400FDF3F0 /* BTKMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C588FFD3161BE00400FDF3F0 /* BTKMasterViewController.m */; };
 		C588FFD7161BE00400FDF3F0 /* BTKDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C588FFD5161BE00400FDF3F0 /* BTKDetailViewController.m */; };
 		C5AF7983161B4C5E008094EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5AF7982161B4C5E008094EB /* UIKit.framework */; };
@@ -23,6 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C55293F6161CB67E00C451AC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		C55293F8161CB6E200C451AC /* BTKNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTKNote.h; sourceTree = "<group>"; };
+		C55293F9161CB6E200C451AC /* BTKNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTKNote.m; sourceTree = "<group>"; };
+		C55293FB161CB70D00C451AC /* BTKNoteDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTKNoteDataController.h; sourceTree = "<group>"; };
+		C55293FC161CB70D00C451AC /* BTKNoteDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTKNoteDataController.m; sourceTree = "<group>"; };
 		C588FFD2161BE00400FDF3F0 /* BTKMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTKMasterViewController.h; sourceTree = "<group>"; };
 		C588FFD3161BE00400FDF3F0 /* BTKMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTKMasterViewController.m; sourceTree = "<group>"; };
 		C588FFD4161BE00400FDF3F0 /* BTKDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTKDetailViewController.h; sourceTree = "<group>"; };
@@ -90,6 +98,11 @@
 		C5AF7988161B4C5E008094EB /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				C55293F6161CB67E00C451AC /* Default-568h@2x.png */,
+				C55293FB161CB70D00C451AC /* BTKNoteDataController.h */,
+				C55293FC161CB70D00C451AC /* BTKNoteDataController.m */,
+				C55293F8161CB6E200C451AC /* BTKNote.h */,
+				C55293F9161CB6E200C451AC /* BTKNote.m */,
 				C588FFD2161BE00400FDF3F0 /* BTKMasterViewController.h */,
 				C588FFD3161BE00400FDF3F0 /* BTKMasterViewController.m */,
 				C588FFD4161BE00400FDF3F0 /* BTKDetailViewController.h */,
@@ -174,6 +187,7 @@
 				C5AF79A2161B4C5F008094EB /* second.png in Resources */,
 				C5AF79A4161B4C5F008094EB /* second@2x.png in Resources */,
 				C5AF79AB161B4D16008094EB /* README.md in Resources */,
+				C55293F7161CB67E00C451AC /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +203,8 @@
 				C5AF79A0161B4C5F008094EB /* BTKSecondViewController.m in Sources */,
 				C588FFD6161BE00400FDF3F0 /* BTKMasterViewController.m in Sources */,
 				C588FFD7161BE00400FDF3F0 /* BTKDetailViewController.m in Sources */,
+				C55293FA161CB6E300C451AC /* BTKNote.m in Sources */,
+				C55293FD161CB70D00C451AC /* BTKNoteDataController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
