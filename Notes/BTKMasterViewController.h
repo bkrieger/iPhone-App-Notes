@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class BTKNoteDataController;
 
 @interface BTKMasterViewController : UITableViewController
+
+@property (strong, nonatomic) BTKNoteDataController *dataController;
 
 @end

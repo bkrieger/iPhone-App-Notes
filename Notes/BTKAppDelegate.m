@@ -8,11 +8,19 @@
 
 #import "BTKAppDelegate.h"
 
+#import "BTKNoteDataController.h"
+
+#import "BTKMasterViewController.h"
+
 @implementation BTKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    BTKMasterViewController *firstViewController = (BTKMasterViewController *)[[navigationController viewControllers] objectAtIndex:0];
+    
+    BTKNoteDataController *aDataController = [[BTKNoteDataController alloc] init];
+    firstViewController.dataController = aDataController;
     return YES;
 }
 							
