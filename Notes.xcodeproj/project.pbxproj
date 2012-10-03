@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C588FFD6161BE00400FDF3F0 /* BTKMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C588FFD3161BE00400FDF3F0 /* BTKMasterViewController.m */; };
+		C588FFD7161BE00400FDF3F0 /* BTKDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C588FFD5161BE00400FDF3F0 /* BTKDetailViewController.m */; };
 		C5AF7983161B4C5E008094EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5AF7982161B4C5E008094EB /* UIKit.framework */; };
 		C5AF7985161B4C5E008094EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5AF7984161B4C5E008094EB /* Foundation.framework */; };
 		C5AF7987161B4C5E008094EB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5AF7986161B4C5E008094EB /* CoreGraphics.framework */; };
@@ -14,9 +16,6 @@
 		C5AF798F161B4C5E008094EB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AF798E161B4C5E008094EB /* main.m */; };
 		C5AF7993161B4C5E008094EB /* BTKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AF7992161B4C5E008094EB /* BTKAppDelegate.m */; };
 		C5AF7996161B4C5E008094EB /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5AF7994161B4C5E008094EB /* MainStoryboard.storyboard */; };
-		C5AF7999161B4C5E008094EB /* BTKFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AF7998161B4C5E008094EB /* BTKFirstViewController.m */; };
-		C5AF799B161B4C5F008094EB /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = C5AF799A161B4C5F008094EB /* first.png */; };
-		C5AF799D161B4C5F008094EB /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5AF799C161B4C5F008094EB /* first@2x.png */; };
 		C5AF79A0161B4C5F008094EB /* BTKSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AF799F161B4C5F008094EB /* BTKSecondViewController.m */; };
 		C5AF79A2161B4C5F008094EB /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = C5AF79A1161B4C5F008094EB /* second.png */; };
 		C5AF79A4161B4C5F008094EB /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C5AF79A3161B4C5F008094EB /* second@2x.png */; };
@@ -24,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C588FFD2161BE00400FDF3F0 /* BTKMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTKMasterViewController.h; sourceTree = "<group>"; };
+		C588FFD3161BE00400FDF3F0 /* BTKMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTKMasterViewController.m; sourceTree = "<group>"; };
+		C588FFD4161BE00400FDF3F0 /* BTKDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTKDetailViewController.h; sourceTree = "<group>"; };
+		C588FFD5161BE00400FDF3F0 /* BTKDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTKDetailViewController.m; sourceTree = "<group>"; };
 		C5AF797E161B4C5E008094EB /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5AF7982161B4C5E008094EB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C5AF7984161B4C5E008094EB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -35,10 +38,6 @@
 		C5AF7991161B4C5E008094EB /* BTKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTKAppDelegate.h; sourceTree = "<group>"; };
 		C5AF7992161B4C5E008094EB /* BTKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTKAppDelegate.m; sourceTree = "<group>"; };
 		C5AF7995161B4C5E008094EB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		C5AF7997161B4C5E008094EB /* BTKFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTKFirstViewController.h; sourceTree = "<group>"; };
-		C5AF7998161B4C5E008094EB /* BTKFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTKFirstViewController.m; sourceTree = "<group>"; };
-		C5AF799A161B4C5F008094EB /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		C5AF799C161B4C5F008094EB /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
 		C5AF799E161B4C5F008094EB /* BTKSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTKSecondViewController.h; sourceTree = "<group>"; };
 		C5AF799F161B4C5F008094EB /* BTKSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTKSecondViewController.m; sourceTree = "<group>"; };
 		C5AF79A1161B4C5F008094EB /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
@@ -91,13 +90,13 @@
 		C5AF7988161B4C5E008094EB /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				C588FFD2161BE00400FDF3F0 /* BTKMasterViewController.h */,
+				C588FFD3161BE00400FDF3F0 /* BTKMasterViewController.m */,
+				C588FFD4161BE00400FDF3F0 /* BTKDetailViewController.h */,
+				C588FFD5161BE00400FDF3F0 /* BTKDetailViewController.m */,
 				C5AF7991161B4C5E008094EB /* BTKAppDelegate.h */,
 				C5AF7992161B4C5E008094EB /* BTKAppDelegate.m */,
 				C5AF7994161B4C5E008094EB /* MainStoryboard.storyboard */,
-				C5AF7997161B4C5E008094EB /* BTKFirstViewController.h */,
-				C5AF7998161B4C5E008094EB /* BTKFirstViewController.m */,
-				C5AF799A161B4C5F008094EB /* first.png */,
-				C5AF799C161B4C5F008094EB /* first@2x.png */,
 				C5AF799E161B4C5F008094EB /* BTKSecondViewController.h */,
 				C5AF799F161B4C5F008094EB /* BTKSecondViewController.m */,
 				C5AF79A1161B4C5F008094EB /* second.png */,
@@ -172,8 +171,6 @@
 			files = (
 				C5AF798D161B4C5E008094EB /* InfoPlist.strings in Resources */,
 				C5AF7996161B4C5E008094EB /* MainStoryboard.storyboard in Resources */,
-				C5AF799B161B4C5F008094EB /* first.png in Resources */,
-				C5AF799D161B4C5F008094EB /* first@2x.png in Resources */,
 				C5AF79A2161B4C5F008094EB /* second.png in Resources */,
 				C5AF79A4161B4C5F008094EB /* second@2x.png in Resources */,
 				C5AF79AB161B4D16008094EB /* README.md in Resources */,
@@ -189,8 +186,9 @@
 			files = (
 				C5AF798F161B4C5E008094EB /* main.m in Sources */,
 				C5AF7993161B4C5E008094EB /* BTKAppDelegate.m in Sources */,
-				C5AF7999161B4C5E008094EB /* BTKFirstViewController.m in Sources */,
 				C5AF79A0161B4C5F008094EB /* BTKSecondViewController.m in Sources */,
+				C588FFD6161BE00400FDF3F0 /* BTKMasterViewController.m in Sources */,
+				C588FFD7161BE00400FDF3F0 /* BTKDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +304,7 @@
 				C5AF79A9161B4C5F008094EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
