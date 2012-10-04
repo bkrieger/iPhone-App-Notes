@@ -15,7 +15,7 @@
 
 @implementation BTKDetailViewController
 
-@synthesize note = _note, noteTitleLabel = _noteTitleLabel, locationLabel = _locationLabel, dateLabel = _dateLabel;
+@synthesize note = _note;
 
 #pragma mark - Managing the detail item
 
@@ -52,9 +52,9 @@
     }
     
     if(theNote) {
-        self.noteTitleLabel.text = theNote.title;
-        self.locationLabel.text = theNote.location;
-        self.dateLabel.text = [formatter stringFromDate:(NSDate *)theNote.date];
+        self.noteTitleField.text = theNote.title;
+        self.noteLocationField.text = theNote.location;
+        self.noteDateField.text = [formatter stringFromDate:(NSDate *)theNote.date];
     }
 }
 
@@ -68,6 +68,9 @@
 - (void)viewDidUnload
 {
     self.note = nil;
+    [self setNoteTitleField:nil];
+    [self setNoteLocationField:nil];
+    [self setNoteDateField:nil];
     [super viewDidUnload];
 }
 
@@ -75,6 +78,20 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)editedNote:(id)sender {
+    self.note.title = self.noteTitleField.text;
+    self.note.location = self.noteLocationField.text;
+    
+    /*
+    [[self delegate] BTKDetailViewControllerDidFinish:self title:self.noteTitleField.text location:self.noteLocationField.text];
+     */
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

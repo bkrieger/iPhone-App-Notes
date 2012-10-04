@@ -14,18 +14,6 @@
 
 #import "BTKNote.h"
 
-#import "BTKAddNoteViewController.h"
-
-
-/*
-@interface BTKMasterViewController () {
-    NSMutableArray *_objects;
-}
-@end
-*/
-
-@interface BTKMasterViewController () <BTKAddNoteViewControllerDelegate>
-@end
 
 @implementation BTKMasterViewController
 
@@ -36,9 +24,15 @@
     [super awakeFromNib];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [[self tableView] reloadData];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view, typically from a nib.
     /*
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
@@ -54,17 +48,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-- (void)insertNewObject:(id)sender
-{
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
-    }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
-*/
 
 #pragma mark - Table View
 
@@ -136,24 +119,14 @@
         BTKDetailViewController *detailViewController = [segue destinationViewController];
         
         detailViewController.note = [self.dataController objectInListAtIndex:[self.tableView indexPathForSelectedRow].row];
-    } else if ([[segue identifier] isEqualToString:@"showAddNoteView"]) {
-        BTKAddNoteViewController *addController = (BTKAddNoteViewController *)[[[segue destinationViewController] viewControllers] objectAtIndex:0];
-        addController.delegate = self;
-    }
+    } 
     
     
 }
 
-- (void)BTKaddNoteViewControllerDidCancel:(BTKAddNoteViewController *)controller {
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
 
-- (void)BTKaddNoteViewControllerDidFinish:(BTKAddNoteViewController *)controller title:(NSString *)title location:(NSString *)location {
-    if ([title length] || [location length]) {
-        [self.dataController addNoteWithTitle:title location:location];
-        [[self tableView] reloadData];
-    }
-    [self dismissModalViewControllerAnimated:YES];
+- (IBAction)addNote:(id)sender {
+    [self.dataController addNoteWithTitle:@"New Note" location:@""];
+    [[self tableView] reloadData];
 }
-
 @end

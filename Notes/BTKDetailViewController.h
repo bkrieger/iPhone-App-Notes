@@ -9,11 +9,15 @@
 #import <UIKit/UIKit.h>
 @class BTKNote;
 
+
 @interface BTKDetailViewController : UITableViewController
 
 @property (strong,nonatomic) BTKNote *note;
-@property (weak,nonatomic) IBOutlet UILabel *noteTitleLabel;
-@property (weak,nonatomic) IBOutlet UILabel *locationLabel;
-@property (weak,nonatomic) IBOutlet UILabel *dateLabel;
+
+
+@property (weak, nonatomic) IBOutlet UITextField *noteTitleField;
+- (IBAction)editedNote:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *noteLocationField;
+@property (weak, nonatomic) IBOutlet UITextField *noteDateField;
 
 @end

@@ -48,9 +48,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Notes" id="MCv-6R-1Oi">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yXJ-WH-QvJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ltG-7S-7x3">
                             <connections>
-                                <segue destination="awQ-2b-qhi" kind="modal" identifier="showAddNoteView" id="nZN-Np-099"/>
+                                <action selector="addNote:" destination="ILw-6q-24K" id="Bzb-bP-5Dg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -78,19 +78,21 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="QIZ-H9-HVA">
-                                                    <rect key="frame" x="0.0" y="11" width="141" height="21"/>
+                                                    <rect key="frame" x="-51" y="11" width="141" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6mG-w8-WOR">
-                                                    <rect key="frame" x="169" y="11" width="122" height="21"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="zs7-dG-g9p">
+                                                    <rect key="frame" x="176" y="7" width="97" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="editedNote:" destination="Jac-Pf-2z4" eventType="editingDidEnd" id="jjZ-13-aoh"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -109,13 +111,15 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pVR-p2-i6L">
-                                                    <rect key="frame" x="169" y="11" width="122" height="21"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="2wf-b0-YDo">
+                                                    <rect key="frame" x="195" y="7" width="97" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="editedNote:" destination="Jac-Pf-2z4" eventType="editingDidEnd" id="1Ho-cq-9Ra"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -134,13 +138,15 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Bey-l6-Hk4">
-                                                    <rect key="frame" x="169" y="11" width="122" height="21"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="cQV-lc-6AT">
+                                                    <rect key="frame" x="179" y="7" width="97" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="editedNote:" destination="Jac-Pf-2z4" eventType="editingDidEnd" id="Xw4-Zz-9km"/>
+                                                    </connections>
+                                                </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -150,10 +156,11 @@
                         </sections>
                     </tableView>
                     <navigationItem key="navigationItem" id="qlo-wV-lJJ"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="dateLabel" destination="Bey-l6-Hk4" id="ce0-9W-cIO"/>
-                        <outlet property="locationLabel" destination="pVR-p2-i6L" id="WDQ-4a-azx"/>
-                        <outlet property="noteTitleLabel" destination="6mG-w8-WOR" id="UrK-m3-5fk"/>
+                        <outlet property="noteDateField" destination="cQV-lc-6AT" id="Iiq-ju-bZe"/>
+                        <outlet property="noteLocationField" destination="2wf-b0-YDo" id="oI1-HF-wbP"/>
+                        <outlet property="noteTitleField" destination="zs7-dG-g9p" id="ce0-i1-uAs"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kf2-JF-wzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -355,13 +362,17 @@
         <class className="BTKDetailViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BTKDetailViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="locationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="noteTitleLabel" candidateClass="UILabel"/>
+                <relationship kind="action" name="editedNote:"/>
+                <relationship kind="outlet" name="noteDateField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="noteLocationField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="noteTitleField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="BTKMasterViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BTKMasterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addNote:"/>
+            </relationships>
         </class>
         <class className="BTKSecondViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BTKSecondViewController.h"/>

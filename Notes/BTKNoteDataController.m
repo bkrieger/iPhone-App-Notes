@@ -20,7 +20,7 @@
 - (void)initializeDefaultDataList {
     NSMutableArray *noteList = [[NSMutableArray alloc] init];
     self.masterNoteList = noteList;
-    [self addNoteWithTitle:@"New Note" location:@"Unknown"];
+    //[self addNoteWithTitle:@"New Note" location:@"Unknown"];
 }
 
 - (void)setMasterNoteList:(NSMutableArray *)newList {
@@ -44,6 +44,15 @@
 - (BTKNote *)objectInListAtIndex:(NSUInteger)theIndex {
     return [self.masterNoteList objectAtIndex:theIndex];
 }
+
+- (void)addNote {
+    
+    //This is where I will look for a user's location and automatically put it in the location field (where is says Unknown)
+    
+    BTKNote *note = [[BTKNote alloc] initWithTitle:@"New Note" location:@"Unknown" date:[NSDate date]];
+    [self.masterNoteList addObject:note];
+}
+
 
 - (void)addNoteWithTitle:(NSString *)inputNoteTitle location:(NSString *)inputLocation {
     BTKNote *note;
