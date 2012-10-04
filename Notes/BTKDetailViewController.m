@@ -19,17 +19,6 @@
 
 #pragma mark - Managing the detail item
 
-/*
-- (void)setDetailItem:(id)newDetailItem
-{
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
-        
-        // Update the view.
-        [self configureView];
-    }
-}
-*/
 
 - (void)setNote:(BTKNote *) newNote {
     if (_note != newNote) {
@@ -54,7 +43,9 @@
     if(theNote) {
         self.noteTitleField.text = theNote.title;
         self.noteLocationField.text = theNote.location;
-        self.noteDateField.text = [formatter stringFromDate:(NSDate *)theNote.date];
+        //self.noteDateField.text = [formatter stringFromDate:(NSDate *)theNote.date];
+        self.dateLabel.text = [formatter stringFromDate:(NSDate *)theNote.date];
+        self.noteTextView.text = theNote.text;
     }
 }
 
@@ -70,7 +61,9 @@
     self.note = nil;
     [self setNoteTitleField:nil];
     [self setNoteLocationField:nil];
-    [self setNoteDateField:nil];
+    //[self setNoteDateField:nil];
+    [self setNoteTextView:nil];
+    [self setDateLabel:nil];
     [super viewDidUnload];
 }
 
@@ -80,13 +73,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)editedNote:(id)sender {
+- (void) viewWillDisappear:(BOOL)animated {
     self.note.title = self.noteTitleField.text;
     self.note.location = self.noteLocationField.text;
-    
-    /*
-    [[self delegate] BTKDetailViewControllerDidFinish:self title:self.noteTitleField.text location:self.noteLocationField.text];
-     */
+    self.note.text = self.noteTextView.text;
+    self.note.date = [NSDate date];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

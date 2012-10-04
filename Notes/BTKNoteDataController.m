@@ -49,7 +49,7 @@
     
     //This is where I will look for a user's location and automatically put it in the location field (where is says Unknown)
     
-    BTKNote *note = [[BTKNote alloc] initWithTitle:@"New Note" location:@"Unknown" date:[NSDate date]];
+    BTKNote *note = [[BTKNote alloc] initWithTitle:@"New Note" location:@"Unknown" date:[NSDate date] text:@""];
     [self.masterNoteList addObject:note];
 }
 
@@ -57,7 +57,7 @@
 - (void)addNoteWithTitle:(NSString *)inputNoteTitle location:(NSString *)inputLocation {
     BTKNote *note;
     NSDate *today = [NSDate date];
-    note = [[BTKNote alloc] initWithTitle:inputNoteTitle location:inputLocation date:today];
+    note = [[BTKNote alloc] initWithTitle:inputNoteTitle location:inputLocation date:today text:@""];
     [self.masterNoteList addObject:note];
 }
 

@@ -126,7 +126,7 @@
 
 
 - (IBAction)addNote:(id)sender {
-    [self.dataController addNoteWithTitle:@"New Note" location:@""];
+    [self.dataController addNoteWithTitle:@"" location:@""];
     [[self tableView] reloadData];
 }
 @end

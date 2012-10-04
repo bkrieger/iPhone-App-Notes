@@ -13,7 +13,8 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *location;
 @property (nonatomic, strong) NSDate *date;
+@property (nonatomic, copy) NSString *text;
 
--(id)initWithTitle:(NSString *)title location:(NSString *)location date:(NSDate *)date;
+-(id)initWithTitle:(NSString *)title location:(NSString *)location date:(NSDate *)date text:(NSString *) text;
 
 @end
