@@ -14,12 +14,18 @@
 
 #import "BTKNote.h"
 
+#import "BTKAddNoteViewController.h"
+
+
 /*
 @interface BTKMasterViewController () {
     NSMutableArray *_objects;
 }
 @end
 */
+
+@interface BTKMasterViewController () <BTKAddNoteViewControllerDelegate>
+@end
 
 @implementation BTKMasterViewController
 
@@ -130,7 +136,24 @@
         BTKDetailViewController *detailViewController = [segue destinationViewController];
         
         detailViewController.note = [self.dataController objectInListAtIndex:[self.tableView indexPathForSelectedRow].row];
+    } else if ([[segue identifier] isEqualToString:@"showAddNoteView"]) {
+        BTKAddNoteViewController *addController = (BTKAddNoteViewController *)[[[segue destinationViewController] viewControllers] objectAtIndex:0];
+        addController.delegate = self;
     }
+    
+    
+}
+
+- (void)BTKaddNoteViewControllerDidCancel:(BTKAddNoteViewController *)controller {
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)BTKaddNoteViewControllerDidFinish:(BTKAddNoteViewController *)controller title:(NSString *)title location:(NSString *)location {
+    if ([title length] || [location length]) {
+        [self.dataController addNoteWithTitle:title location:location];
+        [[self tableView] reloadData];
+    }
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 @end

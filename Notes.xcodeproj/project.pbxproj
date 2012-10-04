@@ -10,6 +10,7 @@
 		C55293F7161CB67E00C451AC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C55293F6161CB67E00C451AC /* Default-568h@2x.png */; };
 		C55293FA161CB6E300C451AC /* BTKNote.m in Sources */ = {isa = PBXBuildFile; fileRef = C55293F9161CB6E200C451AC /* BTKNote.m */; };
 		C55293FD161CB70D00C451AC /* BTKNoteDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C55293FC161CB70D00C451AC /* BTKNoteDataController.m */; };
+		C583DC84161D0FFA00A4A162 /* BTKAddNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C583DC83161D0FFA00A4A162 /* BTKAddNoteViewController.m */; };
 		C588FFD6161BE00400FDF3F0 /* BTKMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C588FFD3161BE00400FDF3F0 /* BTKMasterViewController.m */; };
 		C588FFD7161BE00400FDF3F0 /* BTKDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C588FFD5161BE00400FDF3F0 /* BTKDetailViewController.m */; };
 		C5AF7983161B4C5E008094EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5AF7982161B4C5E008094EB /* UIKit.framework */; };
@@ -31,6 +32,8 @@
 		C55293F9161CB6E200C451AC /* BTKNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTKNote.m; sourceTree = "<group>"; };
 		C55293FB161CB70D00C451AC /* BTKNoteDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTKNoteDataController.h; sourceTree = "<group>"; };
 		C55293FC161CB70D00C451AC /* BTKNoteDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTKNoteDataController.m; sourceTree = "<group>"; };
+		C583DC82161D0FFA00A4A162 /* BTKAddNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTKAddNoteViewController.h; sourceTree = "<group>"; };
+		C583DC83161D0FFA00A4A162 /* BTKAddNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTKAddNoteViewController.m; sourceTree = "<group>"; };
 		C588FFD2161BE00400FDF3F0 /* BTKMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTKMasterViewController.h; sourceTree = "<group>"; };
 		C588FFD3161BE00400FDF3F0 /* BTKMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTKMasterViewController.m; sourceTree = "<group>"; };
 		C588FFD4161BE00400FDF3F0 /* BTKDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTKDetailViewController.h; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 				C5AF7991161B4C5E008094EB /* BTKAppDelegate.h */,
 				C5AF7992161B4C5E008094EB /* BTKAppDelegate.m */,
 				C5AF7994161B4C5E008094EB /* MainStoryboard.storyboard */,
+				C583DC82161D0FFA00A4A162 /* BTKAddNoteViewController.h */,
+				C583DC83161D0FFA00A4A162 /* BTKAddNoteViewController.m */,
 				C5AF799E161B4C5F008094EB /* BTKSecondViewController.h */,
 				C5AF799F161B4C5F008094EB /* BTKSecondViewController.m */,
 				C5AF79A1161B4C5F008094EB /* second.png */,
@@ -205,6 +210,7 @@
 				C588FFD7161BE00400FDF3F0 /* BTKDetailViewController.m in Sources */,
 				C55293FA161CB6E300C451AC /* BTKNote.m in Sources */,
 				C55293FD161CB70D00C451AC /* BTKNoteDataController.m in Sources */,
+				C583DC84161D0FFA00A4A162 /* BTKAddNoteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
