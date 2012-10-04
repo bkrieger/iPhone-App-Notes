@@ -91,6 +91,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <action selector="editedNote:" destination="Jac-Pf-2z4" eventType="editingDidEnd" id="jjZ-13-aoh"/>
+                                                        <outlet property="delegate" destination="Jac-Pf-2z4" id="VXd-Gp-S4d"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -118,6 +119,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <action selector="editedNote:" destination="Jac-Pf-2z4" eventType="editingDidEnd" id="1Ho-cq-9Ra"/>
+                                                        <outlet property="delegate" destination="Jac-Pf-2z4" id="BbK-UL-P4H"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -145,6 +147,7 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <action selector="editedNote:" destination="Jac-Pf-2z4" eventType="editingDidEnd" id="Xw4-Zz-9km"/>
+                                                        <outlet property="delegate" destination="Jac-Pf-2z4" id="eNd-cV-iBl"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>

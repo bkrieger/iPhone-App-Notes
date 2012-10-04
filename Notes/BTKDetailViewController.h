@@ -10,7 +10,7 @@
 @class BTKNote;
 
 
-@interface BTKDetailViewController : UITableViewController
+@interface BTKDetailViewController : UITableViewController <UITextFieldDelegate>
 
 @property (strong,nonatomic) BTKNote *note;
 
