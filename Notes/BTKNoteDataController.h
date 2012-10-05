@@ -19,5 +19,3 @@
 - (void)addNote;
 - (void)removeObjectAtIndex:(NSUInteger)theIndex;
 @end
-
-NSString *location;

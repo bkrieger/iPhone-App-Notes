@@ -7,14 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface BTKNote : NSObject
 
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *location;
-@property (nonatomic, strong) NSDate *date;
+@property (nonatomic, copy) NSString *locationString;
+@property (nonatomic, strong) CLLocation *location;
+@property (nonatomic, strong) NSString *date;
 @property (nonatomic, copy) NSString *text;
 
--(id)initWithTitle:(NSString *)title location:(NSString *)location date:(NSDate *)date text:(NSString *) text;
+-(id)initWithTitle:(NSString *)title locationString:(NSString *)locationString location:(CLLocation *) location date:(NSString *)date text:(NSString *) text;
 
 @end

@@ -48,26 +48,49 @@
 
 - (void)addNote {
     
-    /*
+    CLLocation *location = nil;
+    NSString *locationString = @"";
+    
     if([CLLocationManager locationServicesEnabled]) {
-        CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        [locationManager startUpdatingLocation];
-        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-        [geocoder reverseGeocodeLocation:locationManager.location completionHandler:^(NSArray *placemarks, NSError *error) {
-            CLPlacemark *placemark = [placemarks objectAtIndex:0];
-            location = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
-        
-        }];
+        if([CLLocationManager authorizationStatus]==kCLAuthorizationStatusAuthorized) {
+            CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+            [locationManager startUpdatingLocation];
+            location = locationManager.location;
+            
+            //If getting the location worked
+            if(location) {
+                float latDeg = location.coordinate.latitude;
+                NSString *latDirection = latDeg >= 0 ? @"N" : @"S";
+                float latD = floorf(abs(latDeg));
+                float latM = (latDeg - latD)*60;
+                float latS = (latM - floor(latM)) * 60;
+                NSString *lat = [NSString stringWithFormat:@"%i°%i'%i\"%@", (int)latD, (int)latM, (int)latS, latDirection];
+                
+                float lonDeg = location.coordinate.longitude;
+                NSString *lonDirection = lonDeg >= 0 ? @"E" : @"W";
+                float lonD = floorf(abs(lonDeg));
+                float lonM = (lonDeg - lonD)*60;
+                float lonS = (lonM - floor(lonM)) * 60;
+                NSString *lon = [NSString stringWithFormat:@"%i°%i'%i\"%@", (int)lonD, (int)lonM, (int)lonS, lonDirection];
+                
+                locationString = [NSString stringWithFormat:@"%@ %@", lat, lon];
+            } else {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Services" message:@"Unable to find your location." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                [alert show];
+            }
+            [locationManager stopUpdatingLocation];
+        } else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Services" message:@"Please allow Notes to use Location Services." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
     } else {
-        location = @"";
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Services" message:@"Please turn location services on." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
     }
-    */
-    location = @"";
     
-    //This is where I will look for a user's location and automatically put it in the location field (where it is blank)
     
-    BTKNote *note = [[BTKNote alloc] initWithTitle:@"" location:location date:[NSDate date] text:@""];
+    BTKNote *note = [[BTKNote alloc] initWithTitle:@"" locationString:locationString location:location date:[NSDate date] text:@""];
     [self.masterNoteList addObject:note];
 }
 

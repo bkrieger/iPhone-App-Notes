@@ -43,7 +43,7 @@
     
     if(theNote) {
         self.noteTitleField.text = theNote.title;
-        self.noteLocationField.text = theNote.location;
+        self.noteLocationField.text = theNote.locationString;
         self.dateLabel.text = [formatter stringFromDate:(NSDate *)theNote.date];
         self.noteTextView.text = theNote.text;
     }
@@ -81,7 +81,7 @@
 
 - (void) viewWillDisappear:(BOOL)animated {
     self.note.title = self.noteTitleField.text;
-    self.note.location = self.noteLocationField.text;
+    self.note.locationString = self.noteLocationField.text;
     self.note.text = self.noteTextView.text;
     //self.note.date = [NSDate date];
 }
