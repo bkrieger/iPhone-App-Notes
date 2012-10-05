@@ -91,8 +91,17 @@
     return YES;
 }
 
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [self save];
+}
+
 - (void)textViewDidBeginEditing:(UITextView *)textView {
     self.navigationItem.rightBarButtonItem = doneButton;
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    self.navigationItem.rightBarButtonItem = nil;
+    [self save];
 }
 
 - (void)done {
@@ -101,6 +110,5 @@
     [self.noteDateField resignFirstResponder];
     [self.noteLocationField resignFirstResponder];
     self.navigationItem.rightBarButtonItem = nil;
-    [self save];
 }
 @end
