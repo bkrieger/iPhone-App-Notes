@@ -95,7 +95,6 @@
     self.navigationItem.rightBarButtonItem = doneButton;
 }
 
-
 - (void)done {
     [self.noteTextView resignFirstResponder];
     [self.noteTitleField resignFirstResponder];
