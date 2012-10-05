@@ -127,9 +127,8 @@
     }
 }
 
-
 - (void)addNote {
-    [self.dataController addNoteWithTitle:@"" location:@""];
+    [self.dataController addNote];
     [[self tableView] reloadData];
 }
 @end

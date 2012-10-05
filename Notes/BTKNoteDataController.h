@@ -16,6 +16,8 @@
 
 - (NSUInteger)countOfList;
 - (BTKNote *)objectInListAtIndex:(NSUInteger)theIndex;
-- (void)addNoteWithTitle:(NSString *)inputNoteTitle location:(NSString *)inputLocation;
+- (void)addNote;
 - (void)removeObjectAtIndex:(NSUInteger)theIndex;
 @end
+
+NSString *location;

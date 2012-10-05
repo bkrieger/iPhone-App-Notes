@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C53160D5161E8BF700CD1091 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53160D4161E8BF700CD1091 /* CoreLocation.framework */; };
 		C55293F7161CB67E00C451AC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C55293F6161CB67E00C451AC /* Default-568h@2x.png */; };
 		C55293FA161CB6E300C451AC /* BTKNote.m in Sources */ = {isa = PBXBuildFile; fileRef = C55293F9161CB6E200C451AC /* BTKNote.m */; };
 		C55293FD161CB70D00C451AC /* BTKNoteDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = C55293FC161CB70D00C451AC /* BTKNoteDataController.m */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C53160D4161E8BF700CD1091 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C55293F6161CB67E00C451AC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C55293F8161CB6E200C451AC /* BTKNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTKNote.h; sourceTree = "<group>"; };
 		C55293F9161CB6E200C451AC /* BTKNote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTKNote.m; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C53160D5161E8BF700CD1091 /* CoreLocation.framework in Frameworks */,
 				C5AF7983161B4C5E008094EB /* UIKit.framework in Frameworks */,
 				C5AF7985161B4C5E008094EB /* Foundation.framework in Frameworks */,
 				C5AF7987161B4C5E008094EB /* CoreGraphics.framework in Frameworks */,
@@ -89,6 +92,7 @@
 		C5AF7981161B4C5E008094EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C53160D4161E8BF700CD1091 /* CoreLocation.framework */,
 				C5AF7982161B4C5E008094EB /* UIKit.framework */,
 				C5AF7984161B4C5E008094EB /* Foundation.framework */,
 				C5AF7986161B4C5E008094EB /* CoreGraphics.framework */,

@@ -83,7 +83,7 @@
     self.note.title = self.noteTitleField.text;
     self.note.location = self.noteLocationField.text;
     self.note.text = self.noteTextView.text;
-    self.note.date = [NSDate date];
+    //self.note.date = [NSDate date];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

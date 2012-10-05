@@ -8,6 +8,8 @@
 
 #import "BTKNoteDataController.h"
 #import "BTKNote.h"
+#import <CoreLocation/CoreLocation.h>
+#import <CoreLocation/CLGeocoder.h>
 
 @interface BTKNoteDataController ()
 - (void)initializeDefaultDataList;
@@ -20,7 +22,6 @@
 - (void)initializeDefaultDataList {
     NSMutableArray *noteList = [[NSMutableArray alloc] init];
     self.masterNoteList = noteList;
-    //[self addNoteWithTitle:@"New Note" location:@"Unknown"];
 }
 
 - (void)setMasterNoteList:(NSMutableArray *)newList {
@@ -47,19 +48,29 @@
 
 - (void)addNote {
     
-    //This is where I will look for a user's location and automatically put it in the location field (where is says Unknown)
+    /*
+    if([CLLocationManager locationServicesEnabled]) {
+        CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        [locationManager startUpdatingLocation];
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+        [geocoder reverseGeocodeLocation:locationManager.location completionHandler:^(NSArray *placemarks, NSError *error) {
+            CLPlacemark *placemark = [placemarks objectAtIndex:0];
+            location = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
+        
+        }];
+    } else {
+        location = @"";
+    }
+    */
+    location = @"";
     
-    BTKNote *note = [[BTKNote alloc] initWithTitle:@"New Note" location:@"Unknown" date:[NSDate date] text:@""];
+    //This is where I will look for a user's location and automatically put it in the location field (where it is blank)
+    
+    BTKNote *note = [[BTKNote alloc] initWithTitle:@"" location:location date:[NSDate date] text:@""];
     [self.masterNoteList addObject:note];
 }
 
-
-- (void)addNoteWithTitle:(NSString *)inputNoteTitle location:(NSString *)inputLocation {
-    BTKNote *note;
-    NSDate *today = [NSDate date];
-    note = [[BTKNote alloc] initWithTitle:inputNoteTitle location:inputLocation date:today text:@""];
-    [self.masterNoteList addObject:note];
-}
 
 - (void)removeObjectAtIndex:(NSUInteger)theIndex {
     [self.masterNoteList removeObjectAtIndex:theIndex];
