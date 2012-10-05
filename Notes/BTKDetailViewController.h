@@ -17,9 +17,10 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *noteTitleField;
 @property (weak, nonatomic) IBOutlet UITextField *noteLocationField;
+@property (weak, nonatomic) IBOutlet UITextField *noteDateField;
 @property (weak, nonatomic) IBOutlet UITextView *noteTextView;
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 - (void)done;
+- (void)save;
 
 
 @end

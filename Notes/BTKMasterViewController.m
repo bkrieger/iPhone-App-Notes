@@ -65,16 +65,11 @@
 {
     static NSString *CellIdentifier = @"NoteCell";
     
-    static NSDateFormatter *formatter = nil;
-    if (formatter == nil) {
-        formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateStyle:NSDateFormatterMediumStyle];
-    }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     BTKNote *noteAtIndex = [self.dataController objectInListAtIndex:indexPath.row];
     [[cell textLabel] setText:noteAtIndex.title];
-    [[cell detailTextLabel] setText:[formatter stringFromDate:(NSDate *)noteAtIndex.date]];
+    [[cell detailTextLabel] setText:noteAtIndex.date];
     return cell;
 
 }

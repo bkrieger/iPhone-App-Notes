@@ -89,8 +89,14 @@
         [alert show];
     }
     
+    static NSDateFormatter *formatter = nil;
+    if (formatter == nil) {
+        formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateStyle:NSDateFormatterMediumStyle];
+    }
     
-    BTKNote *note = [[BTKNote alloc] initWithTitle:@"" locationString:locationString location:location date:[NSDate date] text:@""];
+    
+    BTKNote *note = [[BTKNote alloc] initWithTitle:@"" locationString:locationString location:location date:[formatter stringFromDate:[NSDate date]] text:@""];
     [self.masterNoteList addObject:note];
 }
 

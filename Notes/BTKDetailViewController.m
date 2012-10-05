@@ -35,16 +35,11 @@
     // Update the user interface for the detail item.
 
     BTKNote *theNote = self.note;
-    static NSDateFormatter *formatter = nil;
-    if (formatter == nil) {
-        formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateStyle:NSDateFormatterMediumStyle];
-    }
     
     if(theNote) {
         self.noteTitleField.text = theNote.title;
         self.noteLocationField.text = theNote.locationString;
-        self.dateLabel.text = [formatter stringFromDate:(NSDate *)theNote.date];
+        self.noteDateField.text = theNote.date;
         self.noteTextView.text = theNote.text;
     }
 }
@@ -69,7 +64,7 @@
     [self setNoteTitleField:nil];
     [self setNoteLocationField:nil];
     [self setNoteTextView:nil];
-    [self setDateLabel:nil];
+    [self setNoteDateField:nil];
     [super viewDidUnload];
 }
 
@@ -79,15 +74,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) viewWillDisappear:(BOOL)animated {
+- (void) save {
     self.note.title = self.noteTitleField.text;
     self.note.locationString = self.noteLocationField.text;
     self.note.text = self.noteTextView.text;
-    //self.note.date = [NSDate date];
+    self.note.date = self.noteDateField.text;
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+    [self save];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
+    [self save];
     return YES;
 }
 
@@ -98,7 +98,9 @@
 - (void)done {
     [self.noteTextView resignFirstResponder];
     [self.noteTitleField resignFirstResponder];
+    [self.noteDateField resignFirstResponder];
     [self.noteLocationField resignFirstResponder];
     self.navigationItem.rightBarButtonItem = nil;
+    [self save];
 }
 @end
