@@ -56,8 +56,10 @@
     
     doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(done)];
 
-    self.noteTextView.layer.borderWidth = 5.0f;
-    self.noteTextView.layer.borderColor = [[UIColor redColor] CGColor];
+    self.noteTextView.layer.borderWidth = 2.0f;
+    self.noteTextView.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.noteTextView.layer.cornerRadius = 10;
+    self.noteTextView.clipsToBounds = YES;
     [self configureView];
 }
 
