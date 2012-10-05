@@ -109,7 +109,7 @@
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the item to be re-orderable.
-    return YES;
+    return NO;
 }
 
 
@@ -119,13 +119,16 @@
         BTKDetailViewController *detailViewController = [segue destinationViewController];
         
         detailViewController.note = [self.dataController objectInListAtIndex:[self.tableView indexPathForSelectedRow].row];
-    } 
-    
-    
+    } else if ([[segue identifier] isEqualToString:@"showNewNoteDetails"]) {
+        [self addNote];
+        BTKDetailViewController *detailViewController = [segue destinationViewController];
+        
+        detailViewController.note = [self.dataController objectInListAtIndex:([self.dataController countOfList]-1)];
+    }
 }
 
 
-- (IBAction)addNote:(id)sender {
+- (void)addNote {
     [self.dataController addNoteWithTitle:@"" location:@""];
     [[self tableView] reloadData];
 }

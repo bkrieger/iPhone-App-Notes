@@ -12,6 +12,6 @@
 @interface BTKMasterViewController : UITableViewController
 
 @property (strong, nonatomic) BTKNoteDataController *dataController;
-- (IBAction)addNote:(id)sender;
+- (void)addNote;
 
 @end

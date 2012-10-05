@@ -50,7 +50,7 @@
                     <navigationItem key="navigationItem" title="Notes" id="MCv-6R-1Oi">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ltG-7S-7x3">
                             <connections>
-                                <action selector="addNote:" destination="ILw-6q-24K" id="Bzb-bP-5Dg"/>
+                                <segue destination="Mfo-8Q-i9N" kind="push" identifier="showNewNoteDetails" id="alF-ay-iYP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -456,4 +456,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="alF-ay-iYP"/>
+    </inferredMetricsTieBreakers>
 </document>
