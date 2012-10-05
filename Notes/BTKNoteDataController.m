@@ -61,4 +61,9 @@
     [self.masterNoteList addObject:note];
 }
 
+- (void)removeObjectAtIndex:(NSUInteger)theIndex {
+    [self.masterNoteList removeObjectAtIndex:theIndex];
+}
+
+
 @end

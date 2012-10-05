@@ -8,6 +8,7 @@
 
 #import "BTKDetailViewController.h"
 #import "BTKNote.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface BTKDetailViewController ()
 - (void)configureView;
@@ -53,6 +54,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.noteTextView.layer.borderWidth = 5.0f;
+    self.noteTextView.layer.borderColor = [[UIColor redColor] CGColor];
     [self configureView];
 }
 
@@ -85,4 +88,9 @@
     return YES;
 }
 
+- (IBAction)done:(id)sender {
+    [self.noteTextView resignFirstResponder];
+    [self.noteTitleField resignFirstResponder];
+    [self.noteLocationField resignFirstResponder];
+}
 @end

@@ -10,15 +10,15 @@
 @class BTKNote;
 
 
-@interface BTKDetailViewController : UIViewController <UITextFieldDelegate>
+@interface BTKDetailViewController : UIViewController <UITextFieldDelegate,UITextViewDelegate>
 
 @property (strong,nonatomic) BTKNote *note;
 
 
 @property (weak, nonatomic) IBOutlet UITextField *noteTitleField;
 @property (weak, nonatomic) IBOutlet UITextField *noteLocationField;
-@property (weak, nonatomic) IBOutlet UITextField *noteDateField;
 @property (weak, nonatomic) IBOutlet UITextView *noteTextView;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+- (IBAction)done:(id)sender;
 
 @end
