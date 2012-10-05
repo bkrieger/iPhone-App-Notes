@@ -19,6 +19,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *noteLocationField;
 @property (weak, nonatomic) IBOutlet UITextView *noteTextView;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-- (IBAction)done:(id)sender;
+- (void)done;
+
 
 @end
+
+UIBarButtonItem* doneButton;

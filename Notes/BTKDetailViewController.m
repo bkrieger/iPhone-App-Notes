@@ -44,7 +44,6 @@
     if(theNote) {
         self.noteTitleField.text = theNote.title;
         self.noteLocationField.text = theNote.location;
-        //self.noteDateField.text = [formatter stringFromDate:(NSDate *)theNote.date];
         self.dateLabel.text = [formatter stringFromDate:(NSDate *)theNote.date];
         self.noteTextView.text = theNote.text;
     }
@@ -54,6 +53,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(done)];
+
     self.noteTextView.layer.borderWidth = 5.0f;
     self.noteTextView.layer.borderColor = [[UIColor redColor] CGColor];
     [self configureView];
@@ -64,7 +66,6 @@
     self.note = nil;
     [self setNoteTitleField:nil];
     [self setNoteLocationField:nil];
-    //[self setNoteDateField:nil];
     [self setNoteTextView:nil];
     [self setDateLabel:nil];
     [super viewDidUnload];
@@ -88,9 +89,15 @@
     return YES;
 }
 
-- (IBAction)done:(id)sender {
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    self.navigationItem.rightBarButtonItem = doneButton;
+}
+
+
+- (void)done {
     [self.noteTextView resignFirstResponder];
     [self.noteTitleField resignFirstResponder];
     [self.noteLocationField resignFirstResponder];
+    self.navigationItem.rightBarButtonItem = nil;
 }
 @end
