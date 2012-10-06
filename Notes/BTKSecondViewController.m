@@ -35,6 +35,7 @@
         if(location) {
             [annot setCoordinate:location.coordinate];
             [annot setTitle:note.title];
+            [annot setSubtitle:note.date];
             
             float lat = location.coordinate.latitude;
             float lon = location.coordinate.longitude;
