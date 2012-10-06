@@ -21,10 +21,10 @@
 - (void)viewDidAppear:(BOOL)animated {
     MKPointAnnotation* annot = [[MKPointAnnotation alloc] init];
     
-    double max_lat = 0.0f;
-    double max_lon = 0.0f;
-    double min_lat = 359.9f;
-    double min_lon = 359.9f;
+    double max_lat = -90.0f;
+    double max_lon = -90.0f;
+    double min_lat = 180.0f;
+    double min_lon = 180.0f;
     double sum_lat = 0.0f;
     double sum_lon = 0.0f;
     double numLocations = 0.0f;
@@ -32,7 +32,7 @@
     for (int i=0; i<[self.dataController countOfList]; i++) {
         BTKNote *note = [self.dataController objectInListAtIndex:i];
         CLLocation *location = note.location;
-        if(location!=nil) {
+        if(location) {
             [annot setCoordinate:location.coordinate];
             [annot setTitle:note.title];
             
@@ -67,14 +67,23 @@
         CLLocationCoordinate2D center;
         center.latitude = center_lat;
         center.longitude = center_lon;
-        /*
-        MKCoordinateSpan span = MKCoordinateSpanMake(abs(max_lat) + abs(min_lat), abs(max_lon) + abs(min_lon));
+        
+        double lat_range = max_lat - min_lat;
+        double lon_range = max_lon - min_lon;
+        
+        if (lat_range<20) {
+            lat_range = 20;
+        }
+        if(lon_range<40) {
+            lon_range = 40;
+        }
+        
+        MKCoordinateSpan span = MKCoordinateSpanMake(lat_range, lon_range);
         MKCoordinateRegion region = {center, span};
     
         
         [self.map setRegion:region];
-         */
-        [self.map setCenterCoordinate:center];
+         
     }
 
 }
