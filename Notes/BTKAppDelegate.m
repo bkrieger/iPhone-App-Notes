@@ -12,6 +12,8 @@
 
 #import "BTKMasterViewController.h"
 
+#import "BTKSecondViewController.h"
+
 @implementation BTKAppDelegate
 
 @synthesize window = _window;
@@ -23,8 +25,11 @@
     UINavigationController *navigationController = (UINavigationController *)[[tabBarController viewControllers] objectAtIndex:0];
     BTKMasterViewController *firstViewController = [[navigationController viewControllers] objectAtIndex:0];
     
+    BTKSecondViewController *secondViewController = [[tabBarController viewControllers] objectAtIndex:1];
+    
     BTKNoteDataController *aDataController = [[BTKNoteDataController alloc] init];
     firstViewController.dataController = aDataController;
+    secondViewController.dataController = aDataController;
     return YES;
 }
 							

@@ -7,15 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+
 
 @class BTKNote;
 
-@interface BTKNoteDataController : NSObject
+@interface BTKNoteDataController : NSObject <CLLocationManagerDelegate>
 
 @property (nonatomic,copy) NSMutableArray *masterNoteList;
 
 - (NSUInteger)countOfList;
 - (BTKNote *)objectInListAtIndex:(NSUInteger)theIndex;
 - (void)addNote;
+- (void)makeNoteObject;
 - (void)removeObjectAtIndex:(NSUInteger)theIndex;
+@property (strong, nonatomic) CLLocationManager* locationManager;
+@property (strong, nonatomic) CLLocation* location;
+@property (strong,nonatomic) NSString* locationString;
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations;
 @end
+

@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+@class BTKNoteDataController;
+
 
 @interface BTKSecondViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet MKMapView *map;
+
+@property (strong, nonatomic) BTKNoteDataController *dataController;
+
 
 @end
