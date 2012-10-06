@@ -28,10 +28,30 @@
     [[self tableView] reloadData];
 }
 
+- (CLLocationManager *)getLocationManager {
+    return self.locationManager;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus]==kCLAuthorizationStatusAuthorized) {
+        
+        if (self.locationManager == nil) {
+            self.locationManager = [CLLocationManager new];
+        }
+        
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        self.locationManager.distanceFilter = kCLDistanceFilterNone;
+        
+        [self.locationManager startUpdatingLocation];
+        
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Services" message:@"Please ensure that location services is on and enabled for Notes." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
+
     
 	// Do any additional setup after loading the view, typically from a nib.
     
@@ -123,7 +143,11 @@
 }
 
 - (void)addNote {
-    [self.dataController addNote];
+    
+    self.location = self.locationManager.location;
+
+    
+    [self.dataController addNoteWithLocation:self.location];
     [[self tableView] reloadData];
 }
 @end

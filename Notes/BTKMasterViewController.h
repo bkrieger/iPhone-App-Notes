@@ -7,11 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 @class BTKNoteDataController;
 
 @interface BTKMasterViewController : UITableViewController
 
 @property (strong, nonatomic) BTKNoteDataController *dataController;
 - (void)addNote;
+
+@property (strong, nonatomic) CLLocationManager *locationManager;
+
+- (CLLocationManager *)getLocationManager;
+
+@property (strong,nonatomic) CLLocation *location;
 
 @end
