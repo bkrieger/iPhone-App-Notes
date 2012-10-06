@@ -19,7 +19,6 @@
 - (NSUInteger)countOfList;
 - (BTKNote *)objectInListAtIndex:(NSUInteger)theIndex;
 - (void)addNote;
-- (void)makeNoteObject;
 - (void)removeObjectAtIndex:(NSUInteger)theIndex;
 @property (strong, nonatomic) CLLocationManager* locationManager;
 @property (strong, nonatomic) CLLocation* location;
