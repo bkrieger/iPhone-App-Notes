@@ -135,19 +135,58 @@
         
         detailViewController.note = [self.dataController objectInListAtIndex:[self.tableView indexPathForSelectedRow].row];
     } else if ([[segue identifier] isEqualToString:@"showNewNoteDetails"]) {
-        [self addNote];
-        BTKDetailViewController *detailViewController = [segue destinationViewController];
+        //[self addNote];
         
-        detailViewController.note = [self.dataController objectInListAtIndex:([self.dataController countOfList]-1)];
+        self.location = self.locationManager.location;
+        
+        if(self.location) {
+            CLGeocoder *geocoder = [CLGeocoder new];
+            [geocoder reverseGeocodeLocation:self.location completionHandler:^(NSArray *placemarks, NSError *error) {
+                if(!error && placemarks && placemarks.count > 0) {
+                    CLPlacemark *result = [placemarks objectAtIndex:0];
+                    self.locationString = [result name];
+                    
+                    [self.dataController addNoteWithLocation:self.location locationString:self.locationString];
+                    BTKDetailViewController *detailViewController = [segue destinationViewController];
+                    
+                    detailViewController.note = [self.dataController objectInListAtIndex:([self.dataController countOfList]-1)];
+
+                    
+                } else {
+                    float latDeg = self.location.coordinate.latitude;
+                    NSString *latDirection = latDeg >= 0 ? @"N" : @"S";
+                    float latD = floorf(abs(latDeg));
+                    float latM = (latDeg - latD)*60;
+                    float latS = (latM - floor(latM)) * 60;
+                    NSString *lat = [NSString stringWithFormat:@"%i°%i'%i\"%@", (int)latD, (int)latM, (int)latS, latDirection];
+                    
+                    float lonDeg = self.location.coordinate.longitude;
+                    NSString *lonDirection = lonDeg >= 0 ? @"E" : @"W";
+                    float lonD = floorf(abs(lonDeg));
+                    float lonM = (lonDeg - lonD)*60;
+                    float lonS = (lonM - floor(lonM)) * 60;
+                    NSString *lon = [NSString stringWithFormat:@"%i°%i'%i\"%@", (int)lonD, (int)lonM, (int)lonS, lonDirection];
+                    
+                    self.locationString = [NSString stringWithFormat:@"%@ %@", lat, lon];
+                    
+                    [self.dataController addNoteWithLocation:self.location locationString:self.locationString];
+                    BTKDetailViewController *detailViewController = [segue destinationViewController];
+                    
+                    detailViewController.note = [self.dataController objectInListAtIndex:([self.dataController countOfList]-1)];
+
+                }
+            }];
+        } else {
+            self.locationString = @"";
+            [self.dataController addNoteWithLocation:self.location locationString:self.locationString];
+            BTKDetailViewController *detailViewController = [segue destinationViewController];
+            
+            detailViewController.note = [self.dataController objectInListAtIndex:([self.dataController countOfList]-1)];
+
+        }
+        
+        
+        [[self tableView] reloadData];
     }
-}
-
-- (void)addNote {
-    
-    self.location = self.locationManager.location;
-
-    
-    [self.dataController addNoteWithLocation:self.location];
-    [[self tableView] reloadData];
 }
 @end

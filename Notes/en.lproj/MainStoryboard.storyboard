@@ -121,6 +121,7 @@
                         <outlet property="noteLocationField" destination="yuR-Kz-W3c" id="4mx-8N-4ay"/>
                         <outlet property="noteTextView" destination="Pjf-XC-Jrj" id="Vjh-MJ-qyI"/>
                         <outlet property="noteTitleField" destination="dKN-av-dhN" id="FD5-y5-OXo"/>
+                        <outlet property="scrollView" destination="3YM-Ck-Vtz" id="68i-Gi-YV9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZtC-zo-4lf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -199,6 +200,7 @@
                 <relationship kind="outlet" name="noteLocationField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="noteTextView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="noteTitleField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>
         </class>
         <class className="BTKMasterViewController" superclassName="UITableViewController">

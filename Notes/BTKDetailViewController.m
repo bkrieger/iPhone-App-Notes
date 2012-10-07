@@ -55,6 +55,9 @@
     self.noteTextView.layer.borderColor = [[UIColor grayColor] CGColor];
     self.noteTextView.layer.cornerRadius = 10;
     self.noteTextView.clipsToBounds = YES;
+    
+    //[self registerForKeyboardNotifications];
+    
     [self configureView];
 }
 
@@ -65,6 +68,7 @@
     [self setNoteLocationField:nil];
     [self setNoteTextView:nil];
     [self setNoteDateField:nil];
+    [self setScrollView:nil];
     [super viewDidUnload];
 }
 
@@ -111,4 +115,33 @@
     [self.noteLocationField resignFirstResponder];
     self.navigationItem.rightBarButtonItem = nil;
 }
+/*
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+    
+}
+- (void)keyboardWillShow:(NSNotification *)notif {
+    
+   // [UIView beginAnimations:nil context:NULL];
+    //[UIView setAnimationDuration:0.3];
+    
+    NSDictionary* info = [notif userInfo];
+    CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+    self.scrollView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - keyboardSize.height);
+    
+    //[UIView commitAnimations];
+    
+}
+
+- (void)keyboardWillHide:(NSNotification *)note {
+    self.scrollView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+}
+*/
 @end

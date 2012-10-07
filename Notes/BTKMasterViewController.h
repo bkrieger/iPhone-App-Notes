@@ -13,12 +13,13 @@
 @interface BTKMasterViewController : UITableViewController
 
 @property (strong, nonatomic) BTKNoteDataController *dataController;
-- (void)addNote;
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
 - (CLLocationManager *)getLocationManager;
 
 @property (strong,nonatomic) CLLocation *location;
+
+@property (strong,nonatomic) NSString *locationString;
 
 @end

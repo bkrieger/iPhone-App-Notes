@@ -14,6 +14,7 @@
 
 @property (strong,nonatomic) BTKNote *note;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (weak, nonatomic) IBOutlet UITextField *noteTitleField;
 @property (weak, nonatomic) IBOutlet UITextField *noteLocationField;

@@ -16,10 +16,9 @@
 
 @property (nonatomic,copy) NSMutableArray *masterNoteList;
 
-@property (nonatomic,copy) NSString *locationString;
 - (NSUInteger)countOfList;
 - (BTKNote *)objectInListAtIndex:(NSUInteger)theIndex;
-- (void)addNoteWithLocation:(CLLocation *)location;
+- (void)addNoteWithLocation:(CLLocation *)location locationString:(NSString *)locationString;
 - (void)removeObjectAtIndex:(NSUInteger)theIndex;
 @end
 
