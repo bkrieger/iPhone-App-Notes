@@ -135,7 +135,6 @@
         
         detailViewController.note = [self.dataController objectInListAtIndex:[self.tableView indexPathForSelectedRow].row];
     } else if ([[segue identifier] isEqualToString:@"showNewNoteDetails"]) {
-        //[self addNote];
         
         self.location = self.locationManager.location;
         

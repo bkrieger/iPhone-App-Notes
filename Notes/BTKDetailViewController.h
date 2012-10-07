@@ -10,7 +10,10 @@
 @class BTKNote;
 
 
-@interface BTKDetailViewController : UIViewController <UITextFieldDelegate,UITextViewDelegate>
+@interface BTKDetailViewController : UIViewController <UITextFieldDelegate,UITextViewDelegate> {
+    CGPoint svos;
+
+}
 
 @property (strong,nonatomic) BTKNote *note;
 
