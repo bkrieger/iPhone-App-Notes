@@ -11,7 +11,8 @@
 
 
 @interface BTKDetailViewController : UIViewController <UITextFieldDelegate,UITextViewDelegate> {
-    CGPoint svos;
+    
+    CGPoint scrollViewDefaultOffset;
 
 }
 

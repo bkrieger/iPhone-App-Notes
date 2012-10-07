@@ -99,18 +99,18 @@
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
     self.navigationItem.rightBarButtonItem = doneButton;
-    svos = self.scrollView.contentOffset;
-    CGPoint pt;
-    CGRect rc = [self.noteTextView bounds];
-    rc = [self.noteTextView convertRect:rc toView:self.scrollView];
-    pt = rc.origin;
-    pt.x = 0;
-    [self.scrollView setContentOffset:pt animated:YES];
+    scrollViewDefaultOffset = self.scrollView.contentOffset;
+    CGPoint point;
+    CGRect bounds = [self.noteTextView bounds];
+    bounds = [self.noteTextView convertRect:bounds toView:self.scrollView];
+    point = bounds.origin;
+    point.x = 0;
+    [self.scrollView setContentOffset:point animated:YES];
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
     self.navigationItem.rightBarButtonItem = nil;
-    [self.scrollView setContentOffset:svos animated:YES];
+    [self.scrollView setContentOffset:scrollViewDefaultOffset animated:YES];
     [self save];
 }
 
