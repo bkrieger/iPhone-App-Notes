@@ -43,7 +43,7 @@
         }
         
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        self.locationManager.distanceFilter = kCLDistanceFilterNone;
+        self.locationManager.distanceFilter  = 2000;
         
         [self.locationManager startUpdatingLocation];
         
