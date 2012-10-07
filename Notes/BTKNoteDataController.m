@@ -49,26 +49,35 @@
 
 - (void)addNoteWithLocation:(CLLocation *)location {
     
-    NSString *locationString;
+    
     
     if(location) {
-        float latDeg = location.coordinate.latitude;
-        NSString *latDirection = latDeg >= 0 ? @"N" : @"S";
-        float latD = floorf(abs(latDeg));
-        float latM = (latDeg - latD)*60;
-        float latS = (latM - floor(latM)) * 60;
-        NSString *lat = [NSString stringWithFormat:@"%i°%i'%i\"%@", (int)latD, (int)latM, (int)latS, latDirection];
         
-        float lonDeg = location.coordinate.longitude;
-        NSString *lonDirection = lonDeg >= 0 ? @"E" : @"W";
-        float lonD = floorf(abs(lonDeg));
-        float lonM = (lonDeg - lonD)*60;
-        float lonS = (lonM - floor(lonM)) * 60;
-        NSString *lon = [NSString stringWithFormat:@"%i°%i'%i\"%@", (int)lonD, (int)lonM, (int)lonS, lonDirection];
-        
-        locationString = [NSString stringWithFormat:@"%@ %@", lat, lon];
+        CLGeocoder *geocoder = [CLGeocoder new];
+        [geocoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+            if(!error && placemarks && placemarks.count > 0) {
+                CLPlacemark *result = [placemarks objectAtIndex:0];
+                self.locationString = [result name];
+            } else {
+                float latDeg = location.coordinate.latitude;
+                NSString *latDirection = latDeg >= 0 ? @"N" : @"S";
+                float latD = floorf(abs(latDeg));
+                float latM = (latDeg - latD)*60;
+                float latS = (latM - floor(latM)) * 60;
+                NSString *lat = [NSString stringWithFormat:@"%i°%i'%i\"%@", (int)latD, (int)latM, (int)latS, latDirection];
+                
+                float lonDeg = location.coordinate.longitude;
+                NSString *lonDirection = lonDeg >= 0 ? @"E" : @"W";
+                float lonD = floorf(abs(lonDeg));
+                float lonM = (lonDeg - lonD)*60;
+                float lonS = (lonM - floor(lonM)) * 60;
+                NSString *lon = [NSString stringWithFormat:@"%i°%i'%i\"%@", (int)lonD, (int)lonM, (int)lonS, lonDirection];
+                
+                self.locationString = [NSString stringWithFormat:@"%@ %@", lat, lon];
+            }
+        }];
     } else {
-        locationString = @"";
+        self.locationString = @"";
     }
     
     static NSDateFormatter *formatter = nil;
@@ -77,7 +86,7 @@
         [formatter setDateStyle:NSDateFormatterMediumStyle];
     }
     
-    BTKNote *note = [[BTKNote alloc] initWithTitle:@"" locationString:locationString location:location date:[formatter stringFromDate:[NSDate date]] text:@""];
+    BTKNote *note = [[BTKNote alloc] initWithTitle:@"" locationString:self.locationString location:location date:[formatter stringFromDate:[NSDate date]] text:@""];
     [self.masterNoteList addObject:note];
     
 }

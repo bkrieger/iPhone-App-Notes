@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C527403B161FA5E5009D4C1B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C527403A161FA5E5009D4C1B /* MapKit.framework */; };
+		C529D9C7162129B500A0A86A /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C529D9C6162129B500A0A86A /* icon.png */; };
 		C53160D5161E8BF700CD1091 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53160D4161E8BF700CD1091 /* CoreLocation.framework */; };
 		C55293F7161CB67E00C451AC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C55293F6161CB67E00C451AC /* Default-568h@2x.png */; };
 		C55293FA161CB6E300C451AC /* BTKNote.m in Sources */ = {isa = PBXBuildFile; fileRef = C55293F9161CB6E200C451AC /* BTKNote.m */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		C527403A161FA5E5009D4C1B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C529D9C6162129B500A0A86A /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
 		C53160D4161E8BF700CD1091 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		C55293F6161CB67E00C451AC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C55293F8161CB6E200C451AC /* BTKNote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTKNote.h; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		C5AF7988161B4C5E008094EB /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				C529D9C6162129B500A0A86A /* icon.png */,
 				C55293FB161CB70D00C451AC /* BTKNoteDataController.h */,
 				C55293FC161CB70D00C451AC /* BTKNoteDataController.m */,
 				C55293F8161CB6E200C451AC /* BTKNote.h */,
@@ -204,6 +207,7 @@
 				C55293F7161CB67E00C451AC /* Default-568h@2x.png in Resources */,
 				C5AE955E1620BBE600813715 /* notepad.png in Resources */,
 				C5AE95611620BC3900813715 /* location.png in Resources */,
+				C529D9C7162129B500A0A86A /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
