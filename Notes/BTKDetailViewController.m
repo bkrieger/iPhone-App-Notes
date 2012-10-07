@@ -55,9 +55,7 @@
     self.noteTextView.layer.borderColor = [[UIColor grayColor] CGColor];
     self.noteTextView.layer.cornerRadius = 10;
     self.noteTextView.clipsToBounds = YES;
-    
-    [self registerForKeyboardNotifications];
-    
+        
     [self configureView];
 }
 
@@ -101,34 +99,6 @@
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
     self.navigationItem.rightBarButtonItem = doneButton;
-}
-
-- (void)textViewDidEndEditing:(UITextView *)textView {
-    self.navigationItem.rightBarButtonItem = nil;
-    [self save];
-}
-
-- (void)done {
-    [self.noteTextView resignFirstResponder];
-    [self.noteTitleField resignFirstResponder];
-    [self.noteDateField resignFirstResponder];
-    [self.noteLocationField resignFirstResponder];
-    self.navigationItem.rightBarButtonItem = nil;
-}
-
-- (void)registerForKeyboardNotifications
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillShow:)
-                                                 name:UIKeyboardDidShowNotification object:nil];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWillHide:)
-                                                 name:UIKeyboardWillHideNotification object:nil];
-    
-}
-- (void)keyboardWillShow:(NSNotification *)notif {
-        
     svos = self.scrollView.contentOffset;
     CGPoint pt;
     CGRect rc = [self.noteTextView bounds];
@@ -138,8 +108,18 @@
     [self.scrollView setContentOffset:pt animated:YES];
 }
 
-- (void)keyboardWillHide:(NSNotification *)note {
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    self.navigationItem.rightBarButtonItem = nil;
     [self.scrollView setContentOffset:svos animated:YES];
+    [self save];
+}
+
+- (void)done {
+    [self.noteTextView resignFirstResponder];
+    [self.noteTitleField resignFirstResponder];
+    [self.noteDateField resignFirstResponder];
+    [self.noteLocationField resignFirstResponder];
+    self.navigationItem.rightBarButtonItem = nil;
 }
 
 @end
