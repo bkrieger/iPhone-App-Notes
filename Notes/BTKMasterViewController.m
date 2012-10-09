@@ -25,12 +25,18 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    [self.locationManager startUpdatingLocation];
     [[self tableView] reloadData];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [self.locationManager stopUpdatingLocation];
 }
 
 - (CLLocationManager *)getLocationManager {
     return self.locationManager;
 }
+
 
 - (void)viewDidLoad
 {
