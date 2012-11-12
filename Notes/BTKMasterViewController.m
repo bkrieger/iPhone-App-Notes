@@ -42,12 +42,16 @@
 {
     [super viewDidLoad];
     
-    if([CLLocationManager locationServicesEnabled] && [CLLocationManager authorizationStatus]==kCLAuthorizationStatusAuthorized) {
+    if ([CLLocationManager authorizationStatus] ==kCLAuthorizationStatusNotDetermined) {
+        self.locationManager = [CLLocationManager new];
+    }
+    
+    if([CLLocationManager locationServicesEnabled] && ([CLLocationManager authorizationStatus]==kCLAuthorizationStatusAuthorized || [CLLocationManager authorizationStatus]==kCLAuthorizationStatusNotDetermined)) {
         
         if (self.locationManager == nil) {
             self.locationManager = [CLLocationManager new];
+            
         }
-        
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         self.locationManager.distanceFilter  = 2000;
         
